@@ -94,7 +94,7 @@ public class AsyncExample: ExampleBase {
 
         asyncWorld.numberOfAsyncExamplesRun += 1
 
-        if !asyncWorld.isRunningAdditionalSuites && world.numberOfExamplesRun >= world.cachedIncludedExampleCount {
+        if !asyncWorld.isRunningAdditionalSuites && asyncWorld.numberOfAsyncExamplesRun >= asyncWorld.cachedIncludedExampleCount {
             await MainActor.run {
                 world.suiteHooks.executeAfters()
             }
@@ -115,7 +115,7 @@ public class AsyncExample: ExampleBase {
 
         asyncWorld.numberOfAsyncExamplesRun += 1
 
-        if !asyncWorld.isRunningAdditionalSuites && world.numberOfExamplesRun >= world.cachedIncludedExampleCount {
+        if !asyncWorld.isRunningAdditionalSuites && asyncWorld.numberOfAsyncExamplesRun >= asyncWorld.cachedIncludedExampleCount {
             await MainActor.run {
                 world.suiteHooks.executeAfters()
             }
